@@ -1,0 +1,31 @@
+# docker 在centos上安装
+
+直接按照官网的安装
+https://docs.docker.com/engine/installation/linux/centos/
+
+```
+yum update
+
+```
+
+Add the yum repo
+
+```
+tee /etc/yum.repos.d/docker.repo <<-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+```
+
+`yum -y install docker-engine`
+
+Start the Docker daemon
+`service docker start`
+
+test:
+
+`docker run hello-world`
