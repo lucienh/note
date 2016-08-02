@@ -793,9 +793,63 @@ public void onStartup(ServletContext servletContext) throws ServletException {
 
 <hr/>
 
-又要回到`TomcatEmbeddedServletContainerFactory#getEmbeddedServletContainer`
+又要回到`TomcatEmbeddedServletContainerFactory#getEmbeddedServletContainer`中`getTomcatEmbeddedServletContainer(tomcat);`
+
+```java
+
+protected TomcatEmbeddedServletContainer getTomcatEmbeddedServletContainer(
+			Tomcat tomcat) {
+		return new TomcatEmbeddedServletContainer(tomcat, getPort() >= 0);
+	}
+```
+
+执行`initialize`方法
+
+```java
+private synchronized void initialize() throws EmbeddedServletContainerException {
+		TomcatEmbeddedServletContainer.logger
+				.info("Tomcat initialized with port(s): " + getPortsDescription(false));
+		try {
+			addInstanceIdToEngineName();
+
+			// Remove service connectors to that protocol binding doesn't happen yet
+			removeServiceConnectors();
+
+			// Start the server to trigger initialization listeners
+			this.tomcat.start();
+
+			// We can re-throw failure exception directly in the main thread
+			rethrowDeferredStartupExceptions();
+
+			Context context = findContext();
+			try {
+				ContextBindings.bindClassLoader(context, getNamingToken(context),
+						getClass().getClassLoader());
+			}
+			catch (NamingException ex) {
+				// Naming is not enabled. Continue
+			}
+
+			// Unlike Jetty, all Tomcat threads are daemon threads. We create a
+			// blocking non-daemon to stop immediate shutdown
+			startDaemonAwaitThread();  //tomcat需要调用tomcat.getServer().await()阻塞
+		}
+		catch (Exception ex) {
+			throw new EmbeddedServletContainerException("Unable to start embedded Tomcat",
+					ex);
+		}
+	}
+
+```
+
+调用`this.tomcat.start()`开启`tomcat`，然后通过`startDaemonAwaitThread`执行`this.tomcat.getServer().await()`阻塞当前线程。
 
 
+至此内嵌`tomcat`分析完毕.
+
+<hr/>
+
+ok ~ it's work ! more about is [here](https://github.com/liaokailin/springcloud)
 
 
 
