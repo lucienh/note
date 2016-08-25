@@ -14,7 +14,7 @@ spring boot默认web程序启用tomcat内嵌容器tomcat，监听8080端口,serv
 2015-10-04 00:06:55.768  INFO 609 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2015-10-04 00:06:55.844  INFO 609 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2015-10-04 00:06:55.928  INFO 609 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9090 (http)
-2015-10-04 00:06:55.930  INFO 609 --- [           main] com.u51.lkl.springboot.Application       : Started Application in 3.906 seconds (JVM running for 4.184)
+2015-10-04 00:06:55.930  INFO 609 --- [           main] com.lkl.springboot.Application       : Started Application in 3.906 seconds (JVM running for 4.184)
 ```
 
 可以看出其监听端口9090，执行
@@ -29,7 +29,7 @@ spring boot默认web程序启用tomcat内嵌容器tomcat，监听8080端口,serv
 ###以定义默认编码为例
 	
 ```
-package com.u51.lkl.springboot.container.tomcat;
+package com.lkl.springboot.container.tomcat;
 
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
@@ -120,7 +120,7 @@ server.ssl.keyStore=/Users/liaokailin/software/ca1/keystore
 
 ```
 
-package com.u51.lkl.springboot.container.tomcat;
+package com.lkl.springboot.container.tomcat;
 
 import java.io.File;
 

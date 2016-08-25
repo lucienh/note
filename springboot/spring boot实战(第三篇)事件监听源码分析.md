@@ -8,12 +8,12 @@
 首先来看下上一篇中执行的main方法
 
 ```
-package com.u51.lkl.springboot;
+package com.lkl.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.u51.lkl.springboot.listener.MyApplicationStartedEventListener;
+import com.lkl.springboot.listener.MyApplicationStartedEventListener;
 
 @SpringBootApplication
 public class Application {

@@ -42,7 +42,7 @@ public class User {
 在  `HelloWorldController.java`调用对应bean
 
 ```
-package com.u51.lkl.springboot.controller;
+package com.lkl.springboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,8 +51,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.u51.lkl.springboot.config.User;
-import com.u51.lkl.springboot.event.CallEventDemo;
+import com.lkl.springboot.config.User;
+import com.lkl.springboot.event.CallEventDemo;
 
 @RestController
 @RequestMapping("/springboot")
@@ -281,13 +281,13 @@ spring boot设置多配置文件很简单，可以在bean上使用注解`@Profil
 例如：
 
 ```
-package com.u51.lkl.springboot;
+package com.lkl.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Profile;
 
-import com.u51.lkl.springboot.listener.MyApplicationStartedEventListener;
+import com.lkl.springboot.listener.MyApplicationStartedEventListener;
 
 @Profile("development")
 @SpringBootApplication

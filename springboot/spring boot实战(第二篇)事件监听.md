@@ -24,7 +24,7 @@ spring boot在启动过程中增加事件监听机制，为用户功能拓展提
 创建对应的监听类 `MyApplicationStartedEventListener.java`
 
 ```
-package com.u51.lkl.springboot.listener;
+package com.lkl.springboot.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,12 +57,12 @@ public class MyApplicationStartedEventListener implements ApplicationListener<Ap
 `Application.java`类
 
 ```
-package com.u51.lkl.springboot;
+package com.lkl.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.u51.lkl.springboot.listener.MyApplicationStartedEventListener;
+import com.lkl.springboot.listener.MyApplicationStartedEventListener;
 
 @SpringBootApplication
 public class Application {
@@ -81,7 +81,7 @@ public class Application {
 `MyApplicationEnvironmentPreparedEventListener.java`
 
 ```
-package com.u51.lkl.springboot.listener;
+package com.lkl.springboot.listener;
 
 import java.util.Iterator;
 
@@ -130,7 +130,7 @@ public class MyApplicationEnvironmentPreparedEventListener implements
 `MyApplicationPreparedEventListener.java`
 
 ```
-package com.u51.lkl.springboot.listener;
+package com.lkl.springboot.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -174,7 +174,7 @@ public class MyApplicationPreparedEventListener implements ApplicationListener<A
 `MyApplicationFailedEventListener.java`
 
 ```
-package com.u51.lkl.springboot.listener;
+package com.lkl.springboot.listener;
 
 import org.springframework.boot.context.event.ApplicationFailedEvent;
 import org.springframework.context.ApplicationListener;

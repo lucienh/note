@@ -58,7 +58,7 @@
 创建 `Application.java`
 
 ```
-package com.u51.lkl.springboot;
+package com.lkl.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -82,7 +82,7 @@ public class Application {
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.2.4.RELEASE)
 
-2015-08-25 22:53:35.484  INFO 554 --- [           main] com.u51.lkl.springboot.Application       : Starting Application on mac.local with PID 554 (/Users/liaokailin/code/github/blog-springboot/target/classes started by lkl in /Users/liaokailin/code/github/blog-springboot)
+2015-08-25 22:53:35.484  INFO 554 --- [           main] com.lkl.springboot.Application       : Starting Application on mac.local with PID 554 (/Users/liaokailin/code/github/blog-springboot/target/classes started by lkl in /Users/liaokailin/code/github/blog-springboot)
 2015-08-25 22:53:35.561  INFO 554 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@328908cd: startup date [Tue Aug 25 22:53:35 CST 2015]; root of context hierarchy
 2015-08-25 22:53:36.395  INFO 554 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
 2015-08-25 22:53:37.404  INFO 554 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
@@ -101,7 +101,7 @@ public class Application {
 2015-08-25 22:53:39.232  INFO 554 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2015-08-25 22:53:39.326  INFO 554 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2015-08-25 22:53:39.430  INFO 554 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2015-08-25 22:53:39.433  INFO 554 --- [           main] com.u51.lkl.springboot.Application       : Started Application in 4.829 seconds (JVM running for 5.238)
+2015-08-25 22:53:39.433  INFO 554 --- [           main] com.lkl.springboot.Application       : Started Application in 4.829 seconds (JVM running for 5.238)
 
 ```
 
@@ -134,18 +134,18 @@ public @interface SpringBootApplication {
 ```
 > `@Configuration` : 表示`Application`作为sprig配置文件存在
 > `@EnableAutoConfiguration`: 启动spring boot内置的自动配置
-> `@ComponentScan` : 扫描bean，路径为`Application`类所在`package`以及`package`下的子路径，这里为 `com.u51.lkl.springboot`，在`spring boot`中bean都放置在该路径已经子路径下。
+> `@ComponentScan` : 扫描bean，路径为`Application`类所在`package`以及`package`下的子路径，这里为 `com.lkl.springboot`，在`spring boot`中bean都放置在该路径已经子路径下。
 
 ### 构建REST工程
 
  上面的操作连个HelloWorld都没有出来，远远满不足我们的需求。
  
- 创建一个package：`com.u51.lkl.springboot.controller` 保存`controller`
+ 创建一个package：`com.lkl.springboot.controller` 保存`controller`
  
  构建 `HelloWorldController.java`
  
  ```
- package com.u51.lkl.springboot.controller;
+ package com.lkl.springboot.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

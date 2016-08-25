@@ -124,7 +124,7 @@ public @interface ConditionalOnWebApplication {
 
 ##ConditionalOnProperty
 
-检查指定的属性匹配指定值
+检查指定的属性匹配指定值,`prefix`指定前缀 `name`指定名称 `havingValue` 表示期望的值 `matchIfMissing`表示没有指定值是给定的默认值
 
 ##ConditionalOnResource
 

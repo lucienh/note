@@ -1,5 +1,20 @@
 # 启动redis集群
 
+`redis`按照时需要依赖很多项，这里把安装遇到的缺失包按照命令给出来
+
+
+``` shell
+yum install -y gcc 
+yum install -y zlib
+yum install -y ruby
+yum install -y rubygems
+gem install redis
+wget http://download.redis.io/releases/redis-3.2.3.tar.gz
+tar xzf redis-3.2.3.tar.gz
+cd redis-3.2.3
+make MALLOC=libc  && make test
+```
+
 
 ``` shell
 
